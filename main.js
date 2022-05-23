@@ -6,6 +6,8 @@ const VELOCITY = 10;
 
 const SCREEN_WIDTH = screen.width;
 const SCREEN_HEIGHT = screen.height;
+const screen_width = window.innerWidth;
+const screen_height = window.innerHeight;
 
 let xPosition = 500;
 let yPosition = 300;
@@ -27,22 +29,22 @@ window.addEventListener("keydown", (event) => {
     })
 
 
-    if(key === "ArrowUp" && yPosition > (SCREEN_HEIGHT - SCREEN_HEIGHT)){
+    if(key === "ArrowUp" && yPosition > (screen_height - screen_height)){
         character.classList.add("turnUp");
         yPosition -= VELOCITY;
     }
 
-    if(key === "ArrowDown" && yPosition < (SCREEN_HEIGHT - (2*containerCharacter.clientHeight))){
+    if(key === "ArrowDown" && yPosition < (screen_height - (containerCharacter.clientHeight))){
         character.classList.add("turnDown");
         yPosition += VELOCITY;
     }
 
-    if(key === "ArrowLeft" && xPosition > (SCREEN_WIDTH - SCREEN_WIDTH)){
+    if(key === "ArrowLeft" && xPosition > (screen_width - SCREEN_WIDTH)){
         character.classList.add("turnLeft");
         xPosition -= VELOCITY;
     }
 
-    if(key === "ArrowRight" && xPosition < (SCREEN_WIDTH - character.clientWidth)){
+    if(key === "ArrowRight" && xPosition < (screen_width - character.clientWidth)){
         character.classList.add("turnRight");
         xPosition += VELOCITY;
     }
