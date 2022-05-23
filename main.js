@@ -27,22 +27,22 @@ window.addEventListener("keydown", (event) => {
     })
 
 
-    if(key === "ArrowUp"){
+    if(key === "ArrowUp" && yPosition > (SCREEN_HEIGHT - SCREEN_HEIGHT)){
         character.classList.add("turnUp");
         yPosition -= VELOCITY;
     }
 
-    if(key === "ArrowDown"){
+    if(key === "ArrowDown" && yPosition < (SCREEN_HEIGHT - (2*containerCharacter.clientHeight))){
         character.classList.add("turnDown");
         yPosition += VELOCITY;
     }
 
-    if(key === "ArrowLeft"){
+    if(key === "ArrowLeft" && xPosition > (SCREEN_WIDTH - SCREEN_WIDTH)){
         character.classList.add("turnLeft");
         xPosition -= VELOCITY;
     }
 
-    if(key === "ArrowRight"){
+    if(key === "ArrowRight" && xPosition < (SCREEN_WIDTH - character.clientWidth)){
         character.classList.add("turnRight");
         xPosition += VELOCITY;
     }
